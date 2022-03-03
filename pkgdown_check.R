@@ -19,7 +19,7 @@ check_pkgdown_topics <- function() {
   if (is.null(missing)) {
     print("Everything seems to be in _pkgdown.yaml! :)")
   } else {
-    print(paste0("Might be missing these topics: ", paste0(missing, collapse = ", ")))
+    stop(paste0("Might be missing these topics: ", paste0(missing, collapse = ", ")))
   }
 }
 
