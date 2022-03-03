@@ -15,7 +15,7 @@ check_pkgdown_topics <- function() {
     )
     if (!any(names %in% pkgdown_topics)) f else NULL
   })
-  missing <- unlist(missing)
+  missing <- unique(unlist(missing))
   if (is.null(missing)) {
     print("Everything seems to be in _pkgdown.yaml! :)")
   } else {
