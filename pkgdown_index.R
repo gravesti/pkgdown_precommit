@@ -1,11 +1,11 @@
 #!/usr/bin/env Rscript
 
-# options(warn = 2)
+error_fun <- stop
 tryCatch(
   {
     pkgdown::build_reference_index()
     pkgdown::build_articles_index()
   },
   error = function(e) e,
-  warning = function(w) stop(w)
+  warning = function(w) error_fun(w)
 )
