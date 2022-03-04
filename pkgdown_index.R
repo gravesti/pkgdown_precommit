@@ -1,11 +1,11 @@
 #!/usr/bin/env Rscript
 
-error_fun <- stop
-tryCatch(
-  {
+options(warn = 2)
+# tryCatch(
+  # {
     pkgdown::build_reference_index()
     pkgdown::build_articles_index()
-  },
-  error = function(e) e,
-  warning = function(w) error_fun("Building indexes failed:\n", w)
-)
+  # },
+  # error = function(e) e,
+  # warning = function(w) error_fun("Building indexes failed:\n", w)
+# )
