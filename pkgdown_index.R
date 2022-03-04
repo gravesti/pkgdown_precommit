@@ -7,5 +7,5 @@ tryCatch(
     pkgdown::build_articles_index()
   },
   error = function(e) e,
-  warning = function(w) error_fun(w)
+  warning = function(w) error_fun("Building indexes failed:\n", w)
 )
