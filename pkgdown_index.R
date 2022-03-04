@@ -6,5 +6,6 @@ tryCatch(
     pkgdown::build_reference_index()
     pkgdown::build_articles_index()
   },
-  warning = function(w) error_fun(w)
+  warning = function(w) stop(w),
+  error = function(e) e
 )
