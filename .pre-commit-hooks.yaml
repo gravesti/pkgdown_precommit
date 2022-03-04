@@ -1,5 +1,5 @@
--   id: pkgdown-check
+-   id: pkgdown-index
     name: Check pkgdown yaml for all docs
     description: This hook checks if all man topics are included in pkgdown yaml.
-    entry: Rscript pkgdown_check.R
+    entry: Rscript pkgdown_index.R
     language: r

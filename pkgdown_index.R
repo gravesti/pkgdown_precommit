@@ -1,6 +1,8 @@
+#!/usr/bin/env Rscript
+
 "Attempt to build {pkgodwn} indexes during a precommit.
 Usage:
-  pkgdown-index [--warn_only]
+  pkgdown_index [--warn_only]
 Options:
   --warn_only  Print warnings instead of blocking the commit. Should be
                used with `verbose: True` in `.pre-commit-config.yaml`.
@@ -10,7 +12,7 @@ Options:
 arguments <- docopt::docopt(doc)
 
 error_fun <- if (arguments$warn_only) force else stop
-
+arguments$warn_only <- FALSE
 tryCatch(
   {
     pkgdown::build_reference_index()
